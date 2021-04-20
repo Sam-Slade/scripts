@@ -1,0 +1,33 @@
+#!/bin/bash
+
+case $# in
+  0) 
+    echo "Atleast one argument required"
+    exit 1
+    ;;
+  1)
+    folder=$1
+    script=$1
+    ;;
+  2)
+    folder=$1
+    script=$2
+    ;;
+  *)
+    echo "invalid number of arguments given"
+    exit 1
+    ;;
+esac
+
+if [ ! -d ~/scripts/$folder ]; then
+  echo "Folder does not exist!"
+  echo $folder
+  exit 1
+fi
+
+if [ ! -f ~/scripts/$folder/$script ]; then
+  echo "Script does not exist!"
+  exit 1
+fi
+
+$EDITOR ~/scripts/$folder/$script

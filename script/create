@@ -1,0 +1,30 @@
+#!/bin/bash
+
+case $# in
+  0)
+    echo "Invalid input! Requires atleast one input for script name!"
+    exit 1
+    ;;
+  1)
+    folder=$1
+    script=$1
+    ;;
+  2)
+    folder=$1
+    script=$2
+    ;;
+  *)
+    echo "Too many inputs given!"
+    exit 1
+    ;;
+esac
+
+if [ ! -d "~/scripts/$folder" ]; then
+  mkdir ~/scripts/$folder
+fi
+touch ~/scripts/$folder/$script
+echo "#!/bin/bash" | tee ~/scripts/$folder/$script
+chmod +x ~/scripts/$folder/$script
+echo "Script created!"
+
+
