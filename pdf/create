@@ -1,0 +1,4 @@
+#!/bin/bash
+
+touch $1.tex
+cat ~/scripts/pdf/template.tex >> $1.tex
