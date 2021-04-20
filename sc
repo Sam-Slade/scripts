@@ -2,7 +2,9 @@
 
 print_usage () {
   printf "Usage: Script file manager\n
-  flags:\n
+  The sc script is a script file manager that takes one or two arguments to run a script from within this folder.
+  Scripts are called using\n \tsc <folder> [script]\n\n The script can be named the same as the containing folder and then can be called with just\n \tsc <folder>\n\n
+  Flags:\n
   c\t Create - useage sc -c <folder> [script]\n
   e\t Edit - usage sc -e <folder> [script]\n
   d\t delete - usage sc -d <folder> [script]\n"
